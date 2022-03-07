@@ -25,9 +25,17 @@ TEST_CASE("Test 2 : Check range for 2 consecutive current samples") {
 }
 */
 
-// Test 3 : defined CheckCurrentSamplesRange such that it would pass just for the test input {4,5} : PASSED
-TEST_CASE("Test 2 : Check range for 2 consecutive current samples") {
+// Test 3 : defined CheckCurrentSamplesRange such that it would pass just for the test input {4,5} , no change in the test case : PASSED
+/*
+TEST_CASE("Test 3 : Check range for 2 consecutive current samples") {
   int CurrentSamples[] = {4,5};
   REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 2) == 1);
+}
+*/
+
+// Test 4 : with existing defintion of CheckCurrentSamplesRange, increase inputs and validate the expectation : FAILED
+TEST_CASE("Test 4 : Check range for 3 current samples with first and last input being consecutive") {
+  int CurrentSamples[] = {4,10,5};
+  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3) == 2);
 }
 

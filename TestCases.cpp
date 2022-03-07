@@ -34,8 +34,19 @@ TEST_CASE("Test 3 : Check range for 2 consecutive current samples") {
 */
 
 // Test 4 : with existing defintion of CheckCurrentSamplesRange, increase inputs and validate the expectation : FAILED
+/*
 TEST_CASE("Test 4 : Check range for 3 current samples with first and last input being consecutive") {
   int CurrentSamples[] = {4,10,5};
   REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3) == 2);
 }
+*/
+
+// Test 5 : Since the implementation works only for sorted range, added implementation to sort the array before processing,
+//          no change in the test case : FAILED
+
+TEST_CASE("Test 5 : Check range for 3 current samples with first and last input being consecutive") {
+  int CurrentSamples[] = {4,10,5};
+  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3) == 2);
+}
+
 

@@ -3,5 +3,16 @@
 
 int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples)
 {
-  return 0;
+  int DifferenceBetweenSamples = 0;
+  int NumConsecutiveRange = 0;
+  int index = 0;
+  for(index = 0; index < NumOfSamples; index++)
+  {
+    DifferenceBetweenSamples = CurrentSamples[index + 1] - CurrentSamples[index];
+    if((DifferenceBetweenSamples == 0) || (DifferenceBetweenSamples == 1))
+    {
+      NumConsecutiveRange ++;
+    }
+  }
+  return NumConsecutiveRange;
 }

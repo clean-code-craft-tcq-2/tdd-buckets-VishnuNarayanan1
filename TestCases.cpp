@@ -50,8 +50,8 @@ TEST_CASE("Test 5 : Check range for 3 current samples with first and last input 
 }
 */
 
-// Test 6 : Improved the code by incrementing the range count for standalone numbers which doesn't form any range.
-//          For example in the following input {4,10,5} , 4 and 5 forms a continuous range but 10 is a standalone number.
+// Test 6 : Improved the code by incrementing the range count for separate ranges
+//          For example in the following input {4,10,5} , 4 and 5 forms a continuous range but 10 is a standalone number forming separate range.
 //          no change in the test case : EXPECTED TO BE PASSED, BUT FAILED : But found a bug : 
 //          for loop needs to be run with condition " < NUM_SAMPLES - 1" as we process "SAMPLE + 1" while indexing.
 

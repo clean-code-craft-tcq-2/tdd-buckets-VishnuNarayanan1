@@ -9,7 +9,7 @@ int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples)
   int NumNonConsecutiveNumbers = 0;
   int index = 0;
   SortInputArray(CurrentSamples,NumOfSamples);
-  for(index = 0; index < NumOfSamples; index++)
+  for(index = 0; index < (NumOfSamples - 1); index++)
   {
     DifferenceBetweenSamples = CurrentSamples[index + 1] - CurrentSamples[index];
     if((DifferenceBetweenSamples == 0) || (DifferenceBetweenSamples == 1))

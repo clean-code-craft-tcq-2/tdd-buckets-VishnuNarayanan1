@@ -8,7 +8,7 @@
 // Go through test cases for the adapted TDD flow :
 //************************************************
 
-// Test 1 : before starting the coding
+// Test 1 : before starting the coding : FAILED
 /*
 TEST_CASE("Test 1 : Check range for 2 consecutive current samples") {
   int CurrentSamples[] = {4,5};
@@ -17,7 +17,15 @@ TEST_CASE("Test 1 : Check range for 2 consecutive current samples") {
 */
 
 
-// Test 2 : defined CheckCurrentSamplesRange with always return 0 , no change in the test case
+// Test 2 : defined CheckCurrentSamplesRange with always return 0 , no change in the test case : FAILED
+/*
+TEST_CASE("Test 2 : Check range for 2 consecutive current samples") {
+  int CurrentSamples[] = {4,5};
+  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 2) == 1);
+}
+*/
+
+// Test 3 : defined CheckCurrentSamplesRange such that it would pass just for the test input {4,5} : PASSED
 /*
 TEST_CASE("Test 2 : Check range for 2 consecutive current samples") {
   int CurrentSamples[] = {4,5};

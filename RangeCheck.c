@@ -6,6 +6,7 @@ int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples)
 {
   int DifferenceBetweenSamples = 0;
   int NumConsecutiveRange = 0;
+  int NumNonConsecutiveNumbers = 0;
   int index = 0;
   SortInputArray(CurrentSamples,NumOfSamples);
   for(index = 0; index < NumOfSamples; index++)
@@ -13,8 +14,12 @@ int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples)
     DifferenceBetweenSamples = CurrentSamples[index + 1] - CurrentSamples[index];
     if((DifferenceBetweenSamples == 0) || (DifferenceBetweenSamples == 1))
     {
-      NumConsecutiveRange ++;
+      NumConsecutiveRange++;
+    }
+    else
+    {
+      NumNonConsecutiveNumbers++;
     }
   }
-  return NumConsecutiveRange;
+  return (NumConsecutiveRange + NumNonConsecutiveNumbers);
 }

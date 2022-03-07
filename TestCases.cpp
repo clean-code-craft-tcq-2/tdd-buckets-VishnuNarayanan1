@@ -43,8 +43,18 @@ TEST_CASE("Test 4 : Check range for 3 current samples with first and last input 
 
 // Test 5 : Since the implementation works only for sorted range, added implementation to sort the array before processing,
 //          no change in the test case : FAILED
-
+/*
 TEST_CASE("Test 5 : Check range for 3 current samples with first and last input being consecutive") {
+  int CurrentSamples[] = {4,10,5};
+  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3) == 2);
+}
+*/
+
+// Test 6 : Improved the code by incrementing the range count for standalone numbers which doesn't form any range.
+//          For example in the following input {4,10,5} , 4 and 5 forms a continuous range but 10 is a standalone number.
+//          no change in the test case : PASSED
+
+TEST_CASE("Test 6 : Check range for 3 current samples with first and last input being consecutive") {
   int CurrentSamples[] = {4,10,5};
   REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3) == 2);
 }

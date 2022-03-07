@@ -64,11 +64,10 @@ TEST_CASE("Test 6 : Check range for 3 current samples with first and last input 
 
 // Test 7 : Corrected the loop condition bug found in Test 6 , no change in the test case : PASSED
 
-/*
 TEST_CASE("Test 7 : Check range for 3 current samples with first and last input being consecutive") {
   int CurrentSamples[] = {4,10,5};
   REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3) == 2);
 }
-*/
+
 
 

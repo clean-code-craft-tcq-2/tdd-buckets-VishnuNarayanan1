@@ -64,9 +64,19 @@ TEST_CASE("Test 6 : Check range for 3 current samples with first and last input 
 
 // Test 7 : Corrected the loop condition bug found in Test 6 , no change in the test case : PASSED
 
+/*
 TEST_CASE("Test 7 : Check range for 3 current samples with first and last input being consecutive") {
   int CurrentSamples[] = {4,10,5};
   REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3) == 2);
+}
+*/
+
+// Test 8 : Test by passing function pointer to print the output : FAILED (as there is no code yet to print)
+
+TEST_CASE("Test 8 : Check range for 3 current samples with first and last input being consecutive along with the print function") {
+  FnPtrPrint FuncPointerPrint = &PrintOutput;
+  int CurrentSamples[] = {4,10,5};
+  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3,FuncPointerPrint) == 2);
 }
 
 

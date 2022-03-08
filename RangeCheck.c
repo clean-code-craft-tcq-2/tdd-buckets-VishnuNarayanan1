@@ -15,8 +15,8 @@ int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples,  void (*Fn
     NumConsecutiveRange = NumConsecutiveRange + ConsecutiveSample;
     if(!ConsecutiveSample)
     {
-      FnPtrToPrint(StartRange ,CurrentSamples[index] , NumConsecutiveRange);
-      StartRange = CurrentSamples[index+1];
+      FnPtrToPrint(StartRange ,CurrentSamples[Index] , NumConsecutiveRange);
+      StartRange = CurrentSamples[Index+1];
       NumConsecutiveRange = 0;
       NumRanges++;
     }

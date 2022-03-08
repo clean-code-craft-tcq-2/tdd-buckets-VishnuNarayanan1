@@ -28,7 +28,7 @@ int FindConsecutiveSamples(int Sample1,int Sample2)
 {
     int DifferenceBetweenSamples = 0, ConsecutiveSample = 0;
     DifferenceBetweenSamples = Sample1 - Sample2;
-    if((DifferenceBetweenSamples == 0) && (DifferenceBetweenSamples == 1))
+    if((DifferenceBetweenSamples == 0) || (DifferenceBetweenSamples == 1))
     {
       ConsecutiveSample = 1;
     }   

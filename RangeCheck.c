@@ -4,24 +4,33 @@
 #include "RangeSort.h"
 #include "PrintOutput.h"
 
-int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples, void (*FnPtrToPrint)(int,int,int))
+int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples,  void (*FnPtrToPrint)(int,int,int))
 {
-  int DifferenceBetweenSamples = 0;
-  int NumConsecutiveRange = 0;
-  int NumNonConsecutiveNumbers = 0;
-  int index = 0;
+  int DifferenceBetweenSamples = 0, NumConsecutiveRange = 0, ConsecutiveSample = 0, Index = 0, StartRange = 0, NumRanges = 0;
   SortInputArray(CurrentSamples,NumOfSamples);
-  for(index = 0; index < (NumOfSamples - 1); index++)
+  StartRange = CurrentSamples[0];
+  for(Index = 0; Index < (NumOfSamples - 1); Index++)
   {
-    DifferenceBetweenSamples = CurrentSamples[index + 1] - CurrentSamples[index];
-    if((DifferenceBetweenSamples == 0) || (DifferenceBetweenSamples == 1))
+    ConsecutiveSample = FindConsecutiveSamples(CurrentSamples[Index+1],CurrentSamples[Index]);
+    NumConsecutiveRange = NumConsecutiveRange + ConsecutiveSample;
+    if(!ConsecutiveSample)
     {
-      NumConsecutiveRange++;
-    }
-    else
-    {
-      NumNonConsecutiveNumbers++;
+      FnPtrToPrint(StartRange ,CurrentSamples[index] , NumConsecutiveRange);
+      StartRange = CurrentSamples[index+1];
+      NumConsecutiveRange = 0;
+      NumRanges++;
     }
   }
-  return (NumConsecutiveRange + NumNonConsecutiveNumbers);
+  return (NumRanges);
+}
+
+int FindConsecutiveSamples(int Sample1,int Sample2)
+{
+    int DifferenceBetweenSamples = 0, ConsecutiveSample = 0;
+    DifferenceBetweenSamples = Sample1 - Sample2;
+    if((DifferenceBetweenSamples == 0) && (DifferenceBetweenSamples == 1))
+    {
+      ConsecutiveSample = 1;
+    }   
+  return ConsecutiveSample;
 }

@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN 
 
 #include "test/catch.hpp"
+#include "Config.h"
 #include "RangeSort.h"
 #include "RangeCheck.h"
 

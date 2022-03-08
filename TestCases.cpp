@@ -4,6 +4,7 @@
 #include "Config.h"
 #include "RangeSort.h"
 #include "RangeCheck.h"
+#include "PrintOutput.h"
 
 //************************************************
 // Go through test cases for the adapted TDD flow :
@@ -74,7 +75,27 @@ TEST_CASE("Test 7 : Check range for 3 current samples with first and last input 
 
 // Test 8 : Test by passing function pointer to print the output : FAILED (as there is no code yet to print)
 
+/*
 TEST_CASE("Test 8 : Check range for 3 current samples with first and last input being consecutive along with the print function") {
+  FnPtrPrint FuncPointerPrint = &PrintOutput;
+  int CurrentSamples[] = {4,10,5};
+  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3,FuncPointerPrint) == 2);
+}
+*/
+
+// Test 9 : Updated CheckCurrentSamplesRange with one more parameter to accept function pointer to print, but there is no function defined yet
+//          no change in the test case : FAILED
+/*
+TEST_CASE("Test 9 : Check range for 3 current samples with first and last input being consecutive along with the print function") {
+  FnPtrPrint FuncPointerPrint = &PrintOutput;
+  int CurrentSamples[] = {4,10,5};
+  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3,FuncPointerPrint) == 2);
+}
+*/
+
+// Test 10 : Updated function to print, no change in the test case : FAILED
+
+TEST_CASE("Test 10 : Check range for 3 current samples with first and last input being consecutive along with the print function") {
   FnPtrPrint FuncPointerPrint = &PrintOutput;
   int CurrentSamples[] = {4,10,5};
   REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3,FuncPointerPrint) == 2);

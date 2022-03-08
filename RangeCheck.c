@@ -6,7 +6,7 @@
 
 int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples,  void (*FnPtrToPrint)(int,int,int))
 {
-  int DifferenceBetweenSamples = 0, NumConsecutiveRange = 0, ConsecutiveSample = 0, Index = 0, StartRange = 0, NumRanges = 0;
+  int NumConsecutiveRange = 0, ConsecutiveSample = 0, Index = 0, StartRange = 0, NumRanges = 0;
   SortInputArray(CurrentSamples,NumOfSamples);
   StartRange = CurrentSamples[0];
   for(Index = 0; Index < (NumOfSamples - 1); Index++)

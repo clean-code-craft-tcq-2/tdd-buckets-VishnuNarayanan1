@@ -3,5 +3,5 @@
 
 void PrintOutput(int MinVal, int MaxVal, int NumRange)
 {
-  printf("%d - %d , %d", MinVal, MaxVal, NumRange);
+  printf("\n%d - %d , %d", MinVal, MaxVal, NumRange);
 }

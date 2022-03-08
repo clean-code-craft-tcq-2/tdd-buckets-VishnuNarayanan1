@@ -20,6 +20,10 @@ int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples,  void (*Fn
       NumConsecutiveRange = 0;
       NumRanges++;
     }
+    else if((Index == (NumOfSamples - 2)))
+    {
+       PrintOutput(StartRange ,CurrentSamples[Index+1] , NumConsecutiveRange); 
+    }
   }
   return (NumRanges);
 }

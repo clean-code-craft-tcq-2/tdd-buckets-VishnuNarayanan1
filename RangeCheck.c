@@ -23,6 +23,7 @@ int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples,  void (*Fn
     else if((Index == (NumOfSamples - 2)))
     {
        PrintOutput(StartRange ,CurrentSamples[Index+1] , NumConsecutiveRange); 
+       NumRanges++;
     }
   }
   return (NumRanges);

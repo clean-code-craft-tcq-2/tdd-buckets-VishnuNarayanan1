@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include "Config.h"
 #include "RangeCheck.h"
 #include "RangeSort.h"
+#include "PrintOutput.h"
 
 int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples, void (*FnPtrToPrint)(int,int,int))
 {

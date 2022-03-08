@@ -115,10 +115,10 @@ TEST_CASE("Test 11 : Check range for 3 current samples with first and last input
 
 // Test 12 : Resolved the code bug to handle end condition of range : PASSED
 
-TEST_CASE("Test 12 : Check range for 3 current samples with first and last input being consecutive along with the print function") {
+TEST_CASE("Test 12 : Check range for 4 current samples with print function") {
   FnPtrPrint FuncPointerPrint = &PrintOutput;
-  int CurrentSamples[] = {4,10,5};
-  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3,FuncPointerPrint) == 2);
+  int CurrentSamples[] = {4,10,5,11};
+  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 4,FuncPointerPrint) == 2);
 }
 
 

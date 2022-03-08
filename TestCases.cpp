@@ -104,13 +104,23 @@ TEST_CASE("Test 10 : Check range for 3 current samples with first and last input
 
 
 // Test 11 : Refactor the code to accomodate various responsibility segregation, sorting, looping and finding continuous range
-//           no change in test case : PASSED
-
+//           no change in test case : Expected to PASS but FAILED due to code bug
+/*
 TEST_CASE("Test 11 : Check range for 3 current samples with first and last input being consecutive along with the print function") {
   FnPtrPrint FuncPointerPrint = &PrintOutput;
   int CurrentSamples[] = {4,10,5};
   REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3,FuncPointerPrint) == 2);
 }
+*/
+
+// Test 12 : Resolved the code bug to handle end condition of range : PASSED
+
+TEST_CASE("Test 12 : Check range for 3 current samples with first and last input being consecutive along with the print function") {
+  FnPtrPrint FuncPointerPrint = &PrintOutput;
+  int CurrentSamples[] = {4,10,5};
+  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 3,FuncPointerPrint) == 2);
+}
+
 
 
 

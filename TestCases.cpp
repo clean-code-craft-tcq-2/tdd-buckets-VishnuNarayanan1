@@ -123,13 +123,13 @@ TEST_CASE("Test 12 : Check range for 4 current samples with print function") {
 */
 
 // Test 13 : 
-/*
+
 TEST_CASE("Test 13 : Pass the test inputs provided {3,3,5,4,10,11,12}") {
   FnPtrPrint FuncPointerPrint = &PrintOutput;
   int CurrentSamples[] = {3,3,5,4,10,11,12};
   REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 7,FuncPointerPrint) == 2);
 }
-*/
+
 
 
 

@@ -10,6 +10,14 @@
 // Go through test cases for the adapted TDD flow :
 //************************************************
 
+#ifdef TEST_ENVIRONMENT
+int TestPrintCount = 0;
+void PrintOutput_Stub(int MinVal, int MaxVal, int NumRange)
+{
+  TestPrintCount++;
+}
+#endif
+
 // Test 1 : before starting the coding : FAILED
 /*
 TEST_CASE("Test 1 : Check range for 2 consecutive current samples") {
@@ -122,13 +130,24 @@ TEST_CASE("Test 12 : Check range for 4 current samples with print function") {
 }
 */
 
-// Test 13 : 
-
+// Test 13 : Passed the test input provided {3,3,5,4,10,11,12} : PASSED
+/*
 TEST_CASE("Test 13 : Pass the test inputs provided {3,3,5,4,10,11,12}") {
   FnPtrPrint FuncPointerPrint = &PrintOutput;
   int CurrentSamples[] = {3,3,5,4,10,11,12};
   REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 7,FuncPointerPrint) == 2);
 }
+*/
+
+// Test 14 : Refactored the code to split the print in production and test environment : PASSED
+
+TEST_CASE("Test 14 : Pass the test inputs provided {3,3,5,4,10,11,12}") {
+  FnPtrPrint FuncPointerPrint = &PrintOutput_Stub;
+  int CurrentSamples[] = {3,3,5,4,10,11,12};
+  REQUIRE(CheckCurrentSamplesRange(CurrentSamples, 7,FuncPointerPrint) == 2);
+  REQUIRE(TestPrintCount == 2);
+}
+
 
 
 

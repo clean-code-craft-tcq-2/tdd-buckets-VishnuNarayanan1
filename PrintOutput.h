@@ -1,1 +1,1 @@
-void Printoutput(int MinVal, int MaxVal, int NumRange);
+void PrintOutput(int MinVal, int MaxVal, int NumRange);

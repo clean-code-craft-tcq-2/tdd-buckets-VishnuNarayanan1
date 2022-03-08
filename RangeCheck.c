@@ -15,14 +15,14 @@ int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples,  void (*Fn
     NumConsecutiveRange = NumConsecutiveRange + ConsecutiveSample;
     if(!ConsecutiveSample)
     {
-      FnPtrToPrint(StartRange ,CurrentSamples[Index] , NumConsecutiveRange);
+      FnPtrToPrint(StartRange ,CurrentSamples[Index] , (NumConsecutiveRange+1));
       StartRange = CurrentSamples[Index+1];
       NumConsecutiveRange = 0;
       NumRanges++;
     }
     else if((Index == (NumOfSamples - 2)))
     {
-       PrintOutput(StartRange ,CurrentSamples[Index+1] , NumConsecutiveRange); 
+       PrintOutput(StartRange ,CurrentSamples[Index+1] , (NumConsecutiveRange+1)); 
        NumRanges++;
     }
   }

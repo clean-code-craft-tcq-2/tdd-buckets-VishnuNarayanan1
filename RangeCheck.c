@@ -2,7 +2,7 @@
 #include "RangeCheck.h"
 #include "RangeSort.h"
 
-int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples)
+int CheckCurrentSamplesRange (int *CurrentSamples , int NumOfSamples, void (*FnPtrToPrint)(int,int,int))
 {
   int DifferenceBetweenSamples = 0;
   int NumConsecutiveRange = 0;
